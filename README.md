@@ -23,9 +23,11 @@ O projeto MongoDB Commerce consiste em uma série de desafios para praticar a el
 Fora utilizado um banco de dados chamado `commerce`, que contém informações sobre o cardápio da rede de fast-food McDonald's, incluindo ingredientes, valores nutricionais e dados fictícios de vendas.
 
 <details>
-  <summary><strong>🚩 Aqui você pode consultar detalhes a respeito de cada desafio.</strong></summary>
+  <summary><strong>🚩 Aqui você pode consultar detalhes a respeito de cada desafio.</strong></summary> </br>
 
 > ℹ️ Os arquivos dos desafios estão no diretório `./challenges`. O arquivo do primeiro desafio é o `desafio1.js`, do segundo é o `desafio2.js` e assim por diante.
+
+> ℹ️ No contexto do projeto, não foi necessário utilizar o comando `use commerce` antes das queries dos arquivos de desafios.
 
 - **Desafio 1**: Retornar a quantidade de documentos inseridos na coleção `produtos`.
 - **Desafio 2**: Ordernar a coleção `produtos` pela quantidade de lanches vendidos em ordem crescente, mostrando apenas o nome e a quantidade de lanches vendidos.
@@ -73,107 +75,39 @@ Fora utilizado um banco de dados chamado `commerce`, que contém informações s
 
 ## Como Executar o Projeto
 
-<!-- Para rodar o projeto, siga os passos abaixo.
+Para rodar o projeto, siga os passos abaixo.
+
+1. Certifique-se
 
 1. Clone o repositório;
 
 ```
-git@github.com:garciaagui/trybe-project-22_blogs-api.git
+git clone git@github.com:garciaagui/trybe-project-26_mongodb-commerce.git
 ```
 
 2. Navegue até a raiz do projeto;
 
 ```
-cd trybe-project-22_blogs-api/
+cd trybe-project-26_mongodb-commerce/
 ```
 
-> 🔘 Agora, decida se o projeto será rodado localmente ou via Docker.
-
-<details>
-  <summary><strong>💽 Localmente</strong></summary>
-
-1. Certifique-se que você tenha o **node** instalado na versão 16 ou superior. Confira [aqui](https://nodejs.org/pt-br/download/package-manager/) a documentação oficial.
-
-2. Na raiz do projeto, instale as dependências do projeto.
+3. Instale as dependências do projeto;
 
 ```
 npm install
 ```
 
-3. Configure as variáveis de ambiente:
-
-- Renomeie o arquivo `.env.example` (disponível na raíz do projeto) para `.env`;
-- Configure as variáveis `MYSQL_HOST`, `MYSQL_PORT`, `MYSQL_USER`, `MYSQL_PASSWORD` para o seu contexto local.
-
-4. Crie e popule o banco de dados com o comando abaixo.
+4. 🐋 Caso você não tenha o MongoDB instalado localmente, é possível inicializar um container Docker utilizando o comando abaixo. Caso contrário, pode pular este item;
 
 ```
-npm run prestart
+docker run -d --name=nomeDoContainer -p 27017:27017 mongo:5.0
 ```
 
-> ℹ️ Arquivos de `seeders` criados e disponibilizados pela Trybe.
-
-5. Para iniciar o servidor, utilize um dos comandos abaixo.
+5. Na raiz do projeto, execute o seguinte comando para restaurar a base de dados `commerce`.
 
 ```
-// Comando 1 - Precisa rodá-lo novamente em caso de alteração no código
-npm run start
-
-// Comando 2 - Reinicia o servidor automaticamente caso haja alguma alteração no código
-npm run nodemon
+DBNAME=commerce ./scripts/resetdb.sh assets/produtos
 ```
-
-</details>
-
-<details>
-  <summary><strong>🐋 Docker</strong></summary>
-
-1. Certifique-se que você tenha o **docker-compose** instalado na versão 1.29 ou superior. Links oportunos caso você precise instalar ou atualizar: [Tutorial DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-compose-on-ubuntu-20-04-pt) e [documentação oficial](https://docs.docker.com/compose/install/);
-
-2. Suba os containers executando o comando abaixo. Dois containers serão inicializados: `blogs_api` (node) e `blogs_api_db` (mysql).
-
-```
-docker-compose up -d --build
-```
-
-3. Acesse a CLI do container `blogs_api` com o comando abaixo ou abra-o no VS Code. Para a última opção, recomendo a extensão da Microsoft [Dev Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers).
-
-```
-docker exec -it blogs_api bash
-```
-
-> ⚠️ A partir de agora, **TODOS** os comandos (scripts) disponíveis no `package.json` (incluindo o npm install) devem ser executados **DENTRO** do container `blogs_api`.
-
-4. Instale as dependências do projeto.
-
-```
-npm install
-```
-
-5. Crie e popule o banco de dados com o comando abaixo.
-
-```
-npm run prestart
-```
-
-> ℹ️ Arquivos de `seeders` criados e disponibilizados pela Trybe.
-
-6. Para iniciar o servidor, utilize um dos comandos abaixo.
-
-```
-// Comando 1 - Precisa rodá-lo novamente em caso de alteração no código
-npm start
-
-// Comando 2 - Reinicia o servidor automaticamente caso haja alguma alteração no código
-npm run nodemon
-```
-
-- Para o contexto de teste local, siga os passos abaixo.
-
-1. Renomeie o arquivo `.env.example` (disponível na raíz do projeto) para `.env`;
-2. Configure as variáveis `MYSQL_HOST`, `MYSQL_PORT`, `MYSQL_USER`, `MYSQL_PASSWORD` para o seu contexto local.
-
-</details> -->
 
 <br/>
 
