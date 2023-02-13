@@ -77,8 +77,6 @@ Fora utilizado um banco de dados chamado `commerce`, que contém informações s
 
 Para rodar o projeto, siga os passos abaixo.
 
-1. Certifique-se
-
 1. Clone o repositório;
 
 ```
@@ -113,14 +111,16 @@ DBNAME=commerce ./scripts/resetdb.sh assets/produtos
 
 ## Habilidades
 
-<!-- <ul>
-  <li>Aplicação da arquitetura de software MSC (Model-Service-Controller).</li>
-  <li>Modelagem de dados com o ORM Sequelize.</li>
-  <li>Aplicação dos princípios de arquitetura REST.</li>
-  <li>Criação de CRUD.</li>
-  <li>Utilização do jsonwebtoken (JWT) para geração de token e autenticação de usuários.</li>
-  <li>Utilização do JOI para validação.</li>
-</ul> -->
+<ul>
+  <li>Utilização de métodos e operadores de pesquisa e consulta.</li>
+  <li>Utilização de métodos de páginação.</li>
+  <li>Utilização do método sort() para ordenação.</li>
+  <li>Utilização de operadores de comparação.</li>
+  <li>Utilização de operadores lógicos.</li>
+  <li>Utilização de expressões regulares (regex).</li>
+  <li>Utilização de métodos e operadores de atualização.</li>
+  <li>Utilização de métodos de remoção.</li>
+</ul>
 
 <br/>
 
